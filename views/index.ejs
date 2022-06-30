@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>Task</title>
+    </head>
+
+    <body>
+        <div class="header">
+            <h1>Users Record</h1>
+        </div>
+        <div class="userForm">
+            <form action="/addUser" method="post">
+                <label for="name">Name:</label>
+                <input type="text" name="name" id="name">
+                <label for="email">Email:</label>
+                <input type="text" name="email" id="email">
+                <input type="submit" value="Add User">
+            </form>
+        </div>
+        <div>
+            <% if (length> 0) { %>
+                <% for( let index=0; index < length; index++ ) { %>
+                    <form method="post" action="\deluser" class="user">
+                        <p>Name: <%= result[index].name %>
+                        </p>
+                        Email:<input readonly type="email" name="email" id="disp-email"
+                            value="<%= result[index].email %>">
+                        <input type="submit" id="delbtn" value="Delete user">
+                    </form>
+                    <% } %>
+                        <% } %>
+        </div>
+    </body>
+
+</html>
